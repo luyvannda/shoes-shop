@@ -7,7 +7,7 @@ const Routes = ['Home', 'About', 'Services', 'Pricing', 'Contact'];
 
 export default function NavBar() {
   return (
-    <div className="flex items-center justify-between">
+    <div className="flex flex-wrap items-center justify-between">
       {/* logo */}
       <Link href="/">
         <Image
@@ -26,10 +26,15 @@ export default function NavBar() {
       {/* Menu list */}
 
       <div className="w-full">
-        <ul>
-          {Routes.map(route => {
-            <li key={route}>{route}</li>;
-          })}
+        <ul className="rounded-lg border border-gray-100 bg-gray-50 p-4 text-lg">
+          {Routes.map((route, index) => (
+            <li
+              className={`cursor-pointer rounded px-3 py-2 ${index === 0 ? ' bg-blue-500 text-white' : 'hover:bg-gray-100'}`}
+              key={route}
+            >
+              {route}
+            </li>
+          ))}
         </ul>
       </div>
     </div>
