@@ -4,15 +4,19 @@ import Image from 'next/image';
 export default function ShoeDetail() {
   return (
     <div className="flex flex-col space-y-4 lg:flex-row-reverse">
+      {/* Shoes Image */}
       <div className="flex-1">
-        <Image
-          src="/n1-min.png"
-          alt="A pair of Nike shoe"
-          width={2199}
-          height={1812}
-        ></Image>
+        <div className="bg-gradient-to-br from-[#F637CF] from-5% via-[#E3D876] via-40% to-[#4DD4C6]">
+          <Image
+            src="/n1-min.png"
+            alt="A pair of Nike shoe"
+            width={2199}
+            height={1812}
+          ></Image>
+        </div>
       </div>
       <div className="flex-1 space-y-6 ">
+        {/* Shoes text details */}
         <h1 className="text-5xl font-black md:text-9xl">Nike Air Max 270</h1>
 
         <p className="font-medium md:text-xl">
@@ -21,6 +25,8 @@ export default function ShoeDetail() {
         </p>
 
         <p className="text-3xl font-extrabold md:text-6xl">$100</p>
+
+        {/* Shoes Button and Link */}
         <div className="space-x-10">
           <button className="h-14 w-44 bg-black text-white hover:bg-gray-900 active:bg-gray-700">
             Add to bag

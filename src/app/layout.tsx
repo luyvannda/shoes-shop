@@ -1,3 +1,4 @@
+import '@fontsource-variable/nunito-sans';
 import type { Metadata } from 'next';
 
 import './globals.css';
