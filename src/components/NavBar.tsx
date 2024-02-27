@@ -16,7 +16,7 @@ export default function NavBar() {
   };
 
   return (
-    <div className="flex flex-wrap items-center justify-between">
+    <div className="relative z-10 flex flex-wrap items-center justify-between">
       {/* logo */}
       <Link href="/">
         <Image
@@ -40,10 +40,10 @@ export default function NavBar() {
       <div
         className={`${!isMobileMenuShown && 'hidden'}  w-full lg:block lg:w-auto`}
       >
-        <ul className="flex flex-col rounded-lg border border-gray-100 bg-gray-50 p-4 text-lg lg:flex-row lg:border-none lg:bg-transparent">
+        <ul className="flex flex-col rounded-lg border border-gray-100 bg-gray-50 p-4 text-lg lg:flex-row lg:gap-4 lg:border-none lg:bg-transparent ">
           {Routes.map((route, index) => (
             <li
-              className={`cursor-pointer rounded px-3 py-2 ${index === 0 ? ' bg-blue-500 text-white lg:bg-transparent lg:text-blue-500' : 'hover:bg-gray-100'}`}
+              className={`cursor-pointer rounded px-3 py-2 lg:hover:bg-transparent lg:hover:text-blue-500 ${index === 0 ? ' bg-blue-500 text-white lg:bg-transparent lg:text-blue-500' : 'hover:bg-gray-100'} ${(index === 3 || index === 4) && 'lg:text-white'} `}
               key={route}
             >
               {route}
@@ -54,8 +54,8 @@ export default function NavBar() {
 
       {/* Cart button */}
 
-      <div className="fixed bottom-4 left-4 lg:static">
-        <div className="flex-center h-12 w-12 rounded-full bg-white shadow-md">
+      <div className="fixed bottom-4 left-4 lg:static lg:mr-8">
+        <div className="flex-center h-12 w-12 cursor-pointer rounded-full bg-white shadow-md">
           <TbShoppingBag />
         </div>
       </div>
