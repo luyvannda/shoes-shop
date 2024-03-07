@@ -1,5 +1,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
+import Select from './Select';
+import { QTY, SIZES } from '@/constant';
 
 export default function ShoeDetail() {
   return (
@@ -25,6 +27,9 @@ export default function ShoeDetail() {
         </p>
 
         <p className="text-3xl font-extrabold md:text-6xl">$100</p>
+
+        <Select title={'QTY'} options={QTY} />
+        <Select title={'SIZE'} options={SIZES} />
 
         {/* Shoes Button and Link */}
         <div className="space-x-10">
