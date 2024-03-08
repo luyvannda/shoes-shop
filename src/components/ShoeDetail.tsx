@@ -26,10 +26,12 @@ export default function ShoeDetail() {
           heads with its vibrant color gradient.
         </p>
 
-        <p className="text-3xl font-extrabold md:text-6xl">$100</p>
+        <div className="flex space-x-6">
+          <p className="text-3xl font-extrabold md:text-6xl">$100</p>
 
-        <Select title={'QTY'} options={QTY} />
-        <Select title={'SIZE'} options={SIZES} />
+          <Select title={'QTY'} options={QTY} />
+          <Select title={'SIZE'} options={SIZES} />
+        </div>
 
         {/* Shoes Button and Link */}
         <div className="space-x-10">
