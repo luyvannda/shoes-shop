@@ -8,12 +8,13 @@ export default function ShoeDetail() {
     <div className="flex flex-col space-y-4 lg:flex-row-reverse">
       {/* Shoes Image */}
       <div className="flex-1 lg:-mt-32 lg:ml-28">
-        <div className="flex-center h-full bg-gradient-to-br from-[#F637CF] from-5% via-[#E3D876] via-40% to-[#4DD4C6]">
+        <div className="flex-center  h-full bg-gradient-to-br from-[#F637CF] from-5% via-[#E3D876] via-40% to-[#4DD4C6]">
           <Image
             src="/n1-min.png"
             alt="A pair of Nike shoe"
             width={2199}
             height={1812}
+            className="animate-float"
           ></Image>
         </div>
       </div>
@@ -35,7 +36,7 @@ export default function ShoeDetail() {
 
         {/* Shoes Button and Link */}
         <div className="space-x-10">
-          <button className="h-14 w-44 bg-black text-white hover:bg-gray-900 active:bg-gray-700">
+          <button className="btn-press-anim h-14 w-44 bg-black text-white hover:bg-gray-900 active:bg-gray-700">
             Add to bag
           </button>
 

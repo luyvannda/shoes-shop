@@ -16,7 +16,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className="p-10 xl:px-24">
+      <body className="animate-fadeIn p-10 xl:px-24">
         <NavBar />
         {children}
       </body>
