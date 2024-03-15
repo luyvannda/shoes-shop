@@ -21,7 +21,11 @@ export default function RootLayout({
       <body className="animate-fadeIn p-10 xl:px-24">
         {/* <NavBar />
         {children} */}
-        { SHOE_LIST.map((shoe) => <Card key={shoe.id} item={shoe}/> )     }
+        <div className="flex flex-col gap-6">
+          {SHOE_LIST.map(shoe => (
+            <Card key={shoe.id} item={shoe} />
+          ))}
+        </div>
       </body>
     </html>
   );

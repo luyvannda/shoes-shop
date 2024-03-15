@@ -1,3 +1,5 @@
+'use client';
+
 import { ShoeItem } from '@/constant';
 import Image from 'next/image';
 import { FC } from 'react';
@@ -7,12 +9,12 @@ interface CardProps {
 }
 
 const Card: FC<CardProps> = ({ item }) => {
-  const { id, src, color, title, description, price } = item;
+  const { id, src, bgColor, title, description, price } = item;
   return (
     <div
-      className={`bg-[${color}] relative max-w-xl transform cursor-pointer transition hover:scale-105`}
+      className={`${bgColor} relative max-w-xl  transform cursor-pointer  transition hover:scale-105`}
     >
-      <div className="p-8">
+      <div className={`p-8`}>
         <div className="text-2xl font-bold">{title}</div>
         <div className="mt-10 font-semibold underline underline-offset-4">
           SHOP NOW +
