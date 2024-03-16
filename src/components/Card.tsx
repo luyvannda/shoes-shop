@@ -9,10 +9,11 @@ interface CardProps {
 }
 
 const Card: FC<CardProps> = ({ item }) => {
-  const { id, src, bgColor, title, description, price } = item;
+  const { id, src, color, title, description, price } = item;
   return (
     <div
-      className={`${bgColor} relative max-w-xl  transform cursor-pointer  transition hover:scale-105`}
+      className="relative max-w-xl  transform cursor-pointer  transition hover:scale-105"
+      style={{ backgroundColor: `${color}` }}
     >
       <div className={`p-8`}>
         <div className="text-2xl font-bold">{title}</div>

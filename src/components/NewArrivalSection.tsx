@@ -3,22 +3,24 @@ import { ShoeItem } from '@/constant';
 import { FC } from 'react';
 
 interface itemsProps {
-  items: ShoeItem;
+  items: ShoeItem[];
 }
 
 const NewArrivalSection: FC<itemsProps> = ({ items }) => {
   return (
-    <div className="flex-center mt-20">
-      <div
-        className="bg-center text-4xl font-extrabold"
-        style={{ backgroundImage: "url('/lines.png')" }}
-      >
-        New Arrivals
+    <div className="mt-20">
+      <div className="flex-center">
+        <div
+          className="bg-center text-4xl font-extrabold"
+          style={{ backgroundImage: "url('/lines.png')" }}
+        >
+          New Arrivals
+        </div>
       </div>
-      <div className="">
-        {/* {SHOE_LIST.map(shoe => (
-        <Card key={shoe.id} item={shoe} />
-      ))} */}
+      <div className=" mt-10 grid grid-cols-1 gap-x-6 gap-y-20 md:grid-cols-2 lg:gap-x-10 xl:grid-cols-3 xl:gap-x-16">
+        {items.map(item => (
+          <Card key={item.id} item={item} />
+        ))}
       </div>
     </div>
   );

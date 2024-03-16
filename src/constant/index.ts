@@ -10,7 +10,7 @@ export const QTY = [1, 2, 3, 4, 5];
 export interface ShoeItem {
   id: number;
   src: StaticImageData;
-  bgColor: string;
+  color: string;
   title: string;
   description: string;
   price: number;
@@ -20,7 +20,7 @@ export const SHOE_LIST: ShoeItem[] = [
   {
     id: 1,
     src: nike1,
-    bgColor: 'bg-[#EEFFA4]',
+    color: '#EEFFA4',
     title: 'Nike Air Max 270',
     description:
       "The Nike Air Max 270 is a lifestyle shoe that's sure to turn heads with its vibrant color gradient.",
@@ -29,7 +29,7 @@ export const SHOE_LIST: ShoeItem[] = [
   {
     id: 2,
     src: nike2,
-    bgColor: 'bg-[#DDCEFD]',
+    color: '#DDCEFD',
     title: 'Nike Air Vapor',
     description:
       "The Nike Air Vapor is a sleek and stylish shoe that's perfect for any occasion. It's the perfect shoe for any active lifestyle.",
@@ -38,7 +38,7 @@ export const SHOE_LIST: ShoeItem[] = [
   {
     id: 3,
     src: nike3,
-    bgColor: 'bg-[#DAFFA2]',
+    color: '#DAFFA2',
     title: 'Nike Air Max 2090',
     description:
       "The Nike Air Max 2090 is shoe that's both stylish and comfortable. It's the perfect shoe for any fashion-forward individual.",
@@ -47,7 +47,7 @@ export const SHOE_LIST: ShoeItem[] = [
   {
     id: 4,
     src: nike4,
-    bgColor: 'bg-[#FCC4EA]',
+    color: '#FCC4EA',
     title: 'Nike Air Blazer',
     description:
       "The Nike Air Blazer is a classic shoe that's perfect for any casual occasion. It's the perfect shoe for any laid-back individual.",
