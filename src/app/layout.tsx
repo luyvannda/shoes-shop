@@ -3,7 +3,7 @@ import type { Metadata } from 'next';
 
 import './globals.css';
 import NavBar from '@/components/NavBar';
-import Card from '@/components/Card';
+import NewArrivalSection from '@/components/NewArrivalSection';
 import { SHOE_LIST } from '@/constant';
 
 export const metadata: Metadata = {
@@ -19,13 +19,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="animate-fadeIn p-10 xl:px-24">
-        {/* <NavBar />
-        {children} */}
-        <div className="flex flex-col gap-6">
-          {SHOE_LIST.map(shoe => (
-            <Card key={shoe.id} item={shoe} />
-          ))}
-        </div>
+        <NavBar />
+        {children}
+        <NewArrivalSection items={SHOE_LIST} />
       </body>
     </html>
   );
