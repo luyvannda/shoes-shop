@@ -5,6 +5,7 @@ import './globals.css';
 import NavBar from '@/components/NavBar';
 import NewArrivalSection from '@/components/NewArrivalSection';
 import { SHOE_LIST } from '@/constant';
+import SideBar from '@/components/SideBar';
 
 export const metadata: Metadata = {
   title: 'Shoes Shop',
@@ -22,6 +23,7 @@ export default function RootLayout({
         <NavBar />
         {children}
         <NewArrivalSection items={SHOE_LIST} />
+        <SideBar />
       </body>
     </html>
   );
