@@ -10,8 +10,8 @@
     "prepare": "husky install"
   },
   "lint-staged": {
-    "*.{js,jt,jsx,jtx}": "eslint --cache --fix",
-    "src/**/*.{js,jt,jsx,jtx,css,md}": "prettier --write --ignore-unknown"
+    "*.{js,ts,jsx,tsx}": "eslint --cache --fix",
+    "src/**/*.{js,ts,jsx,tsx,css,md}": "prettier --write --ignore-unknown"
   },
   "dependencies": {
     "@fontsource-variable/nunito-sans": "^5.0.9",
