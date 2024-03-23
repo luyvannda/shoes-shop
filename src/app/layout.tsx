@@ -2,10 +2,9 @@ import '@fontsource-variable/nunito-sans';
 import type { Metadata } from 'next';
 
 import './globals.css';
-import NavBar from '@/components/NavBar';
 import NewArrivalSection from '@/components/NewArrivalSection';
 import { SHOE_LIST } from '@/constant';
-import SideBar from '@/components/SideBar';
+import ClientComponent from '@/components/ClientComponent';
 
 export const metadata: Metadata = {
   title: 'Shoes Shop',
@@ -20,10 +19,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="animate-fadeIn p-10 xl:px-24">
-        <NavBar />
+        <ClientComponent />
         {children}
         <NewArrivalSection items={SHOE_LIST} />
-        <SideBar />
       </body>
     </html>
   );

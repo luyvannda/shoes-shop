@@ -8,7 +8,11 @@ import { RxHamburgerMenu } from 'react-icons/rx';
 
 const Routes = ['Home', 'About', 'Services', 'Pricing', 'Contact'];
 
-export default function NavBar() {
+interface NavBarProps {
+  onClickCartBtn: () => void;
+}
+
+export default function NavBar({ onClickCartBtn }: NavBarProps) {
   const [isMobileMenuShown, setIsMobileMenuShown] = useState(false);
 
   const toggleMobileMenu = () => {
@@ -54,7 +58,10 @@ export default function NavBar() {
 
       {/* Cart button */}
 
-      <div className="btn-press-anim fixed bottom-4 left-4 lg:static lg:mr-8">
+      <div
+        onClick={onClickCartBtn}
+        className="btn-press-anim fixed bottom-4 left-4 lg:static lg:mr-8"
+      >
         <div className="flex-center h-12 w-12 cursor-pointer rounded-full bg-white shadow-md">
           <TbShoppingBag />
         </div>
