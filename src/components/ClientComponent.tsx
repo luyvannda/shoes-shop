@@ -9,7 +9,12 @@ export default function ClientComponent() {
   return (
     <>
       <NavBar onClickCartBtn={() => setIsSideBarOpen(true)} />
-      <SideBar isOpen={isSideBarOpen} />
+      <SideBar
+        isOpen={isSideBarOpen}
+        onClickClose={() => setIsSideBarOpen(false)}
+      >
+        Hi
+      </SideBar>
     </>
   );
 }
