@@ -1,11 +1,11 @@
 import Image from 'next/image';
 import { ShoeItem } from '@/constant';
 
-interface itemProps {
+interface cartItemProps {
   item: ShoeItem;
 }
 
-export default function CartItem({ item }: itemProps) {
+export default function CartItem({ item }: cartItemProps) {
   return (
     <div className="flex cursor-pointer space-x-2 bg-gray-50 p-2 hover:bg-[#DAFFA2]">
       <Image
