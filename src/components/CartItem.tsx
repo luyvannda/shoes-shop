@@ -34,11 +34,11 @@ export default function CartItem({ item }: cartItemProps) {
         <div className="flex space-x-6">
           <div>
             <div className="font-bold">SIZE</div>
-            <Select title="" options={SIZES} />
+            <Select title="" options={SIZES} className={'w-16 p-1'} />
           </div>
           <div>
             <div className="font-bold">QTY</div>
-            <Select title="" options={QTY} />
+            <Select title="" options={QTY} className={'w-16 p-1'} />
           </div>
         </div>
         <button>
