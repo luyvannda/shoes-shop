@@ -3,8 +3,16 @@
 import { useState } from 'react';
 import SideBar from './SideBar';
 import NavBar from './NavBar';
-import CartItem from './CartItem';
+import Cart from './Cart';
 import { SHOE_LIST } from '@/constant';
+
+const FAKE_CART_ITEMS = SHOE_LIST.map(shoe => {
+  return {
+    product: shoe,
+    qty: 1,
+    size: 44,
+  };
+});
 
 export default function ClientComponent() {
   const [isSideBarOpen, setIsSideBarOpen] = useState(false);
@@ -15,10 +23,7 @@ export default function ClientComponent() {
         isOpen={isSideBarOpen}
         onClickClose={() => setIsSideBarOpen(false)}
       >
-        <h2 className="mb-10 text-2xl font-bold">Cart</h2>
-        <CartItem item={SHOE_LIST[0]} />
-        <CartItem item={SHOE_LIST[2]} />
-        <CartItem item={SHOE_LIST[3]} />
+        <Cart cartItems={FAKE_CART_ITEMS} />
       </SideBar>
     </>
   );

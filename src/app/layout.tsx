@@ -8,7 +8,7 @@ import ClientComponent from '@/components/ClientComponent';
 
 export const metadata: Metadata = {
   title: 'Shoes Shop',
-  description: 'Project Shoes Shop is built with tailwind, react and nextjs',
+  description: 'Project Shoes Shop is built with NextJS and tailwind',
 };
 
 export default function RootLayout({

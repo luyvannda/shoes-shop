@@ -4,7 +4,7 @@ import { twMerge } from 'tw-merge';
 interface SelectProps {
   title: string;
   options: number[];
-  className: string;
+  className?: string;
 }
 
 export default function Select({ title, options, className }: SelectProps) {
