@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import SideBar from './SideBar';
 import NavBar from './NavBar';
 import Cart from './Cart';
@@ -19,7 +19,13 @@ export default function ClientComponent() {
   const [isSideBarOpen, setIsSideBarOpen] = useState(false);
 
   // Remember that when retrieving the value from localStorage, we’ll need to parse it back to a boolean if needed:
-  // const isDarkMode = localStorage.getItem('isDarkMode') === 'true';
+
+  useEffect(() => {
+    const isDarkMode = localStorage.getItem('isDarkMode');
+    if (isDarkMode === 'true') {
+      window.document.documentElement.classList.add('dark');
+    }
+  }, []);
 
   const toggleDarkMode = () => {
     window.document.documentElement.classList.toggle('dark');
