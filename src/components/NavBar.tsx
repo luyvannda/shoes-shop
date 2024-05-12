@@ -16,7 +16,7 @@ interface NavBarProps {
 export default function NavBar({ isDarkMode, onClickCartBtn }: NavBarProps) {
   const [isMobileMenuShown, setIsMobileMenuShown] = useState(false);
 
-  const logoPath = isDarkMode ? 'nike-logo-black.svg' : 'nike-logo-white.svg';
+  const logoPath = isDarkMode ? 'nike-logo-white.svg' : 'nike-logo-black.svg';
 
   const toggleMobileMenu = () => {
     setIsMobileMenuShown(prevMenu => !prevMenu);
