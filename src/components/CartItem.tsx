@@ -15,7 +15,7 @@ export default function CartItem({
   item: { product, qty, size },
 }: cartItemProps) {
   return (
-    <div className="cursor-pointer  space-y-2 bg-gray-50 p-2 hover:bg-[#DAFFA2] dark:bg-gray-900 dark:hover:bg-[#709339]">
+    <div className="cursor-pointer  space-y-2 bg-gray-50 p-2 hover:bg-[#DAFFA2] dark:bg-gray-900 dark:hover:bg-night-50">
       <div className="flex space-x-2">
         {/* Image */}
         <Image
@@ -35,7 +35,7 @@ export default function CartItem({
         </div>
 
         {/* Price */}
-        <div className="font-bold">{`$${product.price}`}</div>
+        <div className="font-bold dark:text-white">{`$${product.price}`}</div>
       </div>
 
       <div className="flex justify-between pl-32">
@@ -60,7 +60,7 @@ export default function CartItem({
           </div>
         </div>
         <button>
-          <CiTrash size={25} className="text-black" />
+          <CiTrash size={25} className="text-black dark:text-white" />
         </button>
       </div>
     </div>
