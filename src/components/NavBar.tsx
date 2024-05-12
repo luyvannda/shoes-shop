@@ -9,11 +9,14 @@ import { RxHamburgerMenu } from 'react-icons/rx';
 const Routes = ['Home', 'About', 'Services', 'Pricing', 'Contact'];
 
 interface NavBarProps {
+  isDarkMode: boolean;
   onClickCartBtn: () => void;
 }
 
-export default function NavBar({ onClickCartBtn }: NavBarProps) {
+export default function NavBar({ isDarkMode, onClickCartBtn }: NavBarProps) {
   const [isMobileMenuShown, setIsMobileMenuShown] = useState(false);
+
+  const logoPath = isDarkMode ? '/nike-logo-white.svg' : '/nike-logo-black.svg';
 
   const toggleMobileMenu = () => {
     setIsMobileMenuShown(prevMenu => !prevMenu);
@@ -23,12 +26,7 @@ export default function NavBar({ onClickCartBtn }: NavBarProps) {
     <div className="relative z-10 flex flex-wrap items-center justify-between">
       {/* logo */}
       <Link href="/">
-        <Image
-          src="nike-logo.svg"
-          width={80}
-          height={80}
-          alt="A Nike Logo"
-        ></Image>
+        <Image src={logoPath} width={80} height={80} alt="A Nike Logo"></Image>
       </Link>
 
       {/* Burger Button */}

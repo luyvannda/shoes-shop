@@ -17,26 +17,26 @@ const FAKE_CART_ITEMS = SHOE_LIST.map(shoe => {
 
 export default function ClientComponent() {
   const [isSideBarOpen, setIsSideBarOpen] = useState(false);
+  const [isDarkMode, setIsDarkMode] = useState(false);
 
   // Remember that when retrieving the value from localStorage, we’ll need to parse it back to a boolean if needed:
 
   useEffect(() => {
-    const isDarkMode = localStorage.getItem('isDarkMode');
-    if (isDarkMode === 'true') {
-      window.document.documentElement.classList.add('dark');
-    }
+    const initialDarkMode = localStorage.getItem('isDarkMode') === 'true';
+    setIsDarkMode(initialDarkMode);
   }, []);
 
   const toggleDarkMode = () => {
     window.document.documentElement.classList.toggle('dark');
-    localStorage.setItem(
-      'isDarkMode',
-      String(window.document.documentElement.classList.contains('dark'))
-    );
+    setIsDarkMode(prevMode => !prevMode);
+    localStorage.setItem('isDarkMode', String(!isDarkMode));
   };
   return (
     <>
-      <NavBar onClickCartBtn={() => setIsSideBarOpen(true)} />
+      <NavBar
+        isDarkMode={isDarkMode}
+        onClickCartBtn={() => setIsSideBarOpen(true)}
+      />
       <SideBar
         isOpen={isSideBarOpen}
         onClickClose={() => setIsSideBarOpen(false)}
