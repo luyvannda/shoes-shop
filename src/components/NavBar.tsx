@@ -32,7 +32,7 @@ export default function NavBar({ isDarkMode, onClickCartBtn }: NavBarProps) {
       {/* Burger Button */}
       <button
         onClick={toggleMobileMenu}
-        className="rounded-lg p-2 hover:bg-gray-100 focus:ring-2 focus:ring-gray-200 lg:hidden"
+        className="rounded-lg p-2 hover:bg-gray-100 focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 lg:hidden"
       >
         <RxHamburgerMenu size={25} />
       </button>
@@ -42,7 +42,7 @@ export default function NavBar({ isDarkMode, onClickCartBtn }: NavBarProps) {
       <div
         className={`${!isMobileMenuShown && 'hidden'}  w-full lg:block lg:w-auto`}
       >
-        <ul className="flex flex-col rounded-lg border border-gray-100 bg-gray-50 p-4 text-lg lg:flex-row lg:gap-4 lg:border-none lg:bg-transparent ">
+        <ul className="flex flex-col rounded-lg border border-gray-100 bg-gray-50 p-4 text-lg lg:flex-row lg:gap-4 lg:border-none lg:bg-transparent lg:dark:text-white ">
           {Routes.map((route, index) => (
             <li
               className={`cursor-pointer rounded px-3 py-2 lg:hover:bg-transparent lg:hover:text-blue-500 ${index === 0 ? ' bg-blue-500 text-white lg:bg-transparent lg:text-blue-500' : 'hover:bg-gray-100'} ${(index === 3 || index === 4) && 'lg:text-white'} `}

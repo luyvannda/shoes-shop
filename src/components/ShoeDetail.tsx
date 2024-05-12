@@ -18,7 +18,7 @@ export default function ShoeDetail() {
           ></Image>
         </div>
       </div>
-      <div className="flex-1 space-y-6 ">
+      <div className="flex-1 space-y-6 dark:text-white ">
         {/* Shoes text details */}
         <h1 className="text-5xl font-black md:text-9xl">Nike Air Max 270</h1>
 
@@ -36,7 +36,7 @@ export default function ShoeDetail() {
 
         {/* Shoes Button and Link */}
         <div className="space-x-10">
-          <button className="btn-press-anim h-14 w-44 bg-black text-white hover:bg-gray-900 active:bg-gray-700">
+          <button className="btn-press-anim h-14 w-44 bg-black text-white hover:bg-gray-900 active:bg-gray-700 dark:bg-gray-100 dark:text-black">
             Add to bag
           </button>
 

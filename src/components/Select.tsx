@@ -15,13 +15,13 @@ export default function Select({
   defaultValue,
 }: SelectProps) {
   return (
-    <div className="relative">
+    <div className="relative dark:text-black">
       {/* twMerge is function that specify that new className we added will overwrite the previous one, in our case we overwritten `w-24 p-4` with `w-16 p-1` */}
 
       <select
         defaultValue={defaultValue || ''}
         className={twMerge(
-          `w-24 cursor-pointer appearance-none border border-gray-300 bg-white p-4 ${className}`
+          `w-24 cursor-pointer appearance-none border border-gray-300 bg-white p-4  ${className}`
         )}
       >
         <option value="" disabled hidden>
