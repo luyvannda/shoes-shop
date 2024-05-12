@@ -11,7 +11,7 @@ const NewArrivalSection: FC<itemsProps> = ({ items }) => {
     <div className="mt-20">
       <div className="flex-center">
         <div
-          className="bg-center text-4xl font-extrabold"
+          className="bg-center text-4xl font-extrabold dark:text-white"
           style={{ backgroundImage: "url('/lines.png')" }}
         >
           New Arrivals

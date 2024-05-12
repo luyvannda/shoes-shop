@@ -15,7 +15,7 @@ export default function CartItem({
   item: { product, qty, size },
 }: cartItemProps) {
   return (
-    <div className="cursor-pointer  space-y-2 bg-gray-50 p-2 hover:bg-[#DAFFA2]">
+    <div className="cursor-pointer  space-y-2 bg-gray-50 p-2 hover:bg-[#DAFFA2] dark:bg-gray-900 dark:hover:bg-[#709339]">
       <div className="flex space-x-2">
         {/* Image */}
         <Image
@@ -28,8 +28,10 @@ export default function CartItem({
 
         <div className="space-y-2">
           {/* Title and Description */}
-          <div className="font-bold">{product.title}</div>
-          <div className="text-sm text-gray-400 ">{product.description}</div>
+          <div className="font-bold dark:text-white">{product.title}</div>
+          <div className="text-justify text-sm text-gray-400">
+            {product.description}
+          </div>
         </div>
 
         {/* Price */}
@@ -39,7 +41,7 @@ export default function CartItem({
       <div className="flex justify-between pl-32">
         <div className="flex space-x-6">
           <div>
-            <div className="font-bold">SIZE</div>
+            <div className="font-bold dark:text-white">SIZE</div>
             <Select
               title=""
               defaultValue={size}
@@ -48,7 +50,7 @@ export default function CartItem({
             />
           </div>
           <div>
-            <div className="font-bold">QTY</div>
+            <div className="font-bold dark:text-white">QTY</div>
             <Select
               title=""
               defaultValue={qty}
