@@ -17,19 +17,23 @@ const FAKE_CART_ITEMS = SHOE_LIST.map(shoe => {
 
 export default function ClientComponent() {
   const [isSideBarOpen, setIsSideBarOpen] = useState(false);
-  const [isDarkMode, setIsDarkMode] = useState(false);
+  const [isDarkMode, setIsDarkMode] = useState(() =>
+    JSON.parse(localStorage.getItem('isDarkMode') || 'false')
+  ); // Get initial state from localStorage or default to false
 
-  // Remember that when retrieving the value from localStorage, we’ll need to parse it back to a boolean if needed:
+  useEffect(() => {
+    localStorage.setItem('isDarkMode', JSON.stringify(isDarkMode));
 
-  // useEffect(() => {
-  //   const initialDarkMode = localStorage.getItem('isDarkMode') === 'false';
-  //   setIsDarkMode(initialDarkMode);
-  // }, []);
+    if (isDarkMode) {
+      window.document.documentElement.classList.add('dark');
+    } else {
+      window.document.documentElement.classList.remove('dark');
+    }
+  }, [isDarkMode]);
 
   const toggleDarkMode = () => {
     window.document.documentElement.classList.toggle('dark');
-    setIsDarkMode(prevMode => !prevMode);
-    localStorage.setItem('isDarkMode', String(!isDarkMode));
+    setIsDarkMode((prevMode: any) => !prevMode);
   };
   return (
     <>
