@@ -53,7 +53,7 @@ export default function ClientComponent() {
 
       <ShoeDetail shoe={currentShoe} />
 
-      <NewArrivalSection items={SHOE_LIST} />
+      <NewArrivalSection items={SHOE_LIST} onClickCard={setCurrentShoe} />
 
       {/* Button to toggle dark/light mode */}
       <div className="fixed bottom-4 right-4 z-50 ">

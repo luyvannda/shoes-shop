@@ -2,16 +2,18 @@
 
 import { ShoeItem } from '@/constant';
 import Image from 'next/image';
-import { FC } from 'react';
+import { Dispatch, FC, SetStateAction } from 'react';
 
 interface CardProps {
   item: ShoeItem;
+  onClick: Dispatch<SetStateAction<ShoeItem>>;
 }
 
-const Card: FC<CardProps> = ({ item }) => {
+const Card: FC<CardProps> = ({ item, onClick }) => {
   const { id, src, color, title, description, price } = item;
   return (
     <div
+      onClick={() => onClick(item)}
       className="relative max-w-xl  transform cursor-pointer  transition hover:scale-105"
       style={{ backgroundColor: `${color}` }}
     >

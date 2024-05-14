@@ -1,12 +1,13 @@
 import Card from '@/components/Card';
 import { ShoeItem } from '@/constant';
-import { FC } from 'react';
+import { Dispatch, FC, SetStateAction } from 'react';
 
 interface itemsProps {
   items: ShoeItem[];
+  onClickCard: Dispatch<SetStateAction<ShoeItem>>;
 }
 
-const NewArrivalSection: FC<itemsProps> = ({ items }) => {
+const NewArrivalSection: FC<itemsProps> = ({ items, onClickCard }) => {
   return (
     <div className="mt-20">
       <div className="flex-center">
@@ -19,7 +20,7 @@ const NewArrivalSection: FC<itemsProps> = ({ items }) => {
       </div>
       <div className=" mt-10 grid grid-cols-1 gap-x-6 gap-y-20 md:grid-cols-2 lg:gap-x-10 xl:grid-cols-3 xl:gap-x-16">
         {items.map(item => (
-          <Card key={item.id} item={item} />
+          <Card key={item.id} item={item} onClick={onClickCard} />
         ))}
       </div>
     </div>
