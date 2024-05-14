@@ -21,10 +21,10 @@ export default function ClientComponent() {
 
   // Remember that when retrieving the value from localStorage, we’ll need to parse it back to a boolean if needed:
 
-  useEffect(() => {
-    const initialDarkMode = localStorage.getItem('isDarkMode') === 'true';
-    setIsDarkMode(initialDarkMode);
-  }, []);
+  // useEffect(() => {
+  //   const initialDarkMode = localStorage.getItem('isDarkMode') === 'false';
+  //   setIsDarkMode(initialDarkMode);
+  // }, []);
 
   const toggleDarkMode = () => {
     window.document.documentElement.classList.toggle('dark');
