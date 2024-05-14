@@ -2,15 +2,21 @@ import Link from 'next/link';
 import Image from 'next/image';
 import Select from './Select';
 import { QTY, SIZES } from '@/constant';
+import { ShoeItem } from '@/constant';
+import { FC } from 'react';
 
-export default function ShoeDetail() {
+interface ShoeDetailProps {
+  shoe: ShoeItem;
+}
+
+const ShoeDetail: FC<ShoeDetailProps> = ({ shoe }) => {
   return (
     <div className="flex flex-col space-y-4 lg:flex-row-reverse">
       {/* Shoes Image */}
       <div className="flex-1 lg:-mt-32 lg:ml-28">
         <div className="flex-center  h-full bg-gradient-to-br from-[#F637CF] from-5% via-[#E3D876] via-40% to-[#4DD4C6]">
           <Image
-            src="/n1-min.png"
+            src={shoe.src}
             alt="A pair of Nike shoe"
             width={2199}
             height={1812}
@@ -20,15 +26,12 @@ export default function ShoeDetail() {
       </div>
       <div className="flex-1 space-y-6 dark:text-white ">
         {/* Shoes text details */}
-        <h1 className="text-5xl font-black md:text-9xl">Nike Air Max 270</h1>
+        <h1 className="text-5xl font-black md:text-9xl">{shoe.title}</h1>
 
-        <p className="font-medium md:text-xl">
-          The Nike Air Max 270 is a lifestyle shoe that&apos;s sure to turn
-          heads with its vibrant color gradient.
-        </p>
+        <p className="font-medium md:text-xl">{shoe.description}</p>
 
         <div className="flex space-x-6">
-          <p className="text-3xl font-extrabold md:text-6xl">$100</p>
+          <p className="text-3xl font-extrabold md:text-6xl">{shoe.price}</p>
 
           <Select title={'QTY'} options={QTY} />
           <Select title={'SIZE'} options={SIZES} />
@@ -50,4 +53,6 @@ export default function ShoeDetail() {
       </div>
     </div>
   );
-}
+};
+
+export default ShoeDetail;

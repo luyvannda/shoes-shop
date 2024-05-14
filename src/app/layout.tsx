@@ -2,8 +2,7 @@ import '@fontsource-variable/nunito-sans';
 import type { Metadata } from 'next';
 
 import './globals.css';
-import NewArrivalSection from '@/components/NewArrivalSection';
-import { SHOE_LIST } from '@/constant';
+
 import ClientComponent from '@/components/ClientComponent';
 
 export const metadata: Metadata = {
@@ -21,7 +20,6 @@ export default function RootLayout({
       <body className="animate-fadeIn p-10 dark:bg-night xl:px-24">
         <ClientComponent />
         {children}
-        <NewArrivalSection items={SHOE_LIST} />
       </body>
     </html>
   );

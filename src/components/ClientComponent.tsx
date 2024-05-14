@@ -6,6 +6,8 @@ import NavBar from './NavBar';
 import Cart from './Cart';
 import { SHOE_LIST } from '@/constant';
 import { BiMoon, BiSun } from 'react-icons/bi';
+import ShoeDetail from './ShoeDetail';
+import NewArrivalSection from '@/components/NewArrivalSection';
 
 const FAKE_CART_ITEMS = SHOE_LIST.map(shoe => {
   return {
@@ -17,6 +19,7 @@ const FAKE_CART_ITEMS = SHOE_LIST.map(shoe => {
 
 export default function ClientComponent() {
   const [isSideBarOpen, setIsSideBarOpen] = useState(false);
+  const [currentShoe, setCurrentShoe] = useState(SHOE_LIST[0]);
   const [isDarkMode, setIsDarkMode] = useState(() =>
     JSON.parse(localStorage.getItem('isDarkMode') || 'false')
   ); // Get initial state from localStorage or default to false
@@ -47,6 +50,12 @@ export default function ClientComponent() {
       >
         <Cart cartItems={FAKE_CART_ITEMS} />
       </SideBar>
+
+      <ShoeDetail shoe={currentShoe} />
+
+      <NewArrivalSection items={SHOE_LIST} />
+
+      {/* Button to toggle dark/light mode */}
       <div className="fixed bottom-4 right-4 z-50 ">
         <button
           onClick={toggleDarkMode}
